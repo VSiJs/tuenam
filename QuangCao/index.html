@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=vietnamese" rel="stylesheet">	
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>CHECKLIST BỘ QUẢNG CÁO </title>
-    <style>
+     <style>
         body {
            font-family: 'Roboto', sans-serif;
     	   font-size: 16px;
@@ -32,6 +32,7 @@
             color: white;
             padding: 10px;
             border-radius: 5px;
+            position: relative;
         }
 
 	 h1 {
@@ -102,11 +103,11 @@
             box-sizing: border-box;
         }
 	    .header-right img {
-            height: 200px;
-            z-index: 0;
-            top: 20px;
-            right: 20px;
-	        position: fixed;
+            width: 22%;
+	    height: 110%;
+            position: absolute;
+            top: 0px;
+            right: 10px;
         }
 	    .clear-btn {
             position: absolute;
@@ -122,10 +123,12 @@
         }
 
     </style>
+
     <script>
 	<!---------------------------KEY LOCALSTORAGE---------------------------------->
 	 const localStorageKey = 'checklistData_QUANGCAO';
 
+	 
 	 document.addEventListener('DOMContentLoaded', function () {
             loadSavedData();
 
@@ -190,16 +193,14 @@ function saveData() {
     </script>
 </head>
 <body>
-<div class="header-right">
-        <img src="3.png" alt="Icon">
-    </div>
 <div class="container">
     <div class="header">
             <img src="dayhocvaluyenthi_logo.png" alt="Logo">
             <h1>CHECKLIST BỘ QUẢNG CÁO</h1>
+        <div class="header-right">
+                <img src="3.png" alt="Icon">
+            </div>
         </div>
-
-
     <table>
         <thead>
             <tr>
