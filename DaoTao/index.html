@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=vietnamese" rel="stylesheet">    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>CHECKLIST BỘ PHẬN ĐÀO TẠO</title>
-   <style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=vietnamese" rel="stylesheet">
+    <title>CHECKLIST BỘ PHẬN DỊCH VỤ</title>
+    <style>
         body {
-           font-family: 'Roboto', sans-serif;
-           font-size: 16px;
-           line-height: 1.5;
-           color: #333;
-           background-image: url('../images/Thiết kế 0 tên.png'); 
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            background-image: url('../images/Thiết kế 0 tên.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-           margin: 0;
+            margin: 0;
             padding: 0;
-        
         }
-     .header img {
+        .header img {
             height: 50px;
         }
-    
-    .header {
+        .header {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,22 +31,21 @@
             border-radius: 5px;
             position: relative;
         }
-
-     h1 {
+        h1 {
             margin: 0;
             font-size: 1.5em;
             align-items: center;
         }
-     .container {
+        .container {
             max-width: 1000px;
             margin: auto;
             background: #fff;
             padding: 50px;
             border-radius: 50px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden; 
+            overflow: hidden;
             position: relative;
-            min-width: 720px; 
+            min-width: 720px;
             z-index: 1;
         }
         table {
@@ -69,16 +65,16 @@
             background-color: #4CAF50;
             color: black;
         }
-    .footer{
-        text-align: center;
+        .footer {
+            text-align: center;
             margin-top: 20px;
-                font-weight: bold;
-                color: #e76f51
-    }
+            font-weight: bold;
+            color: #e76f51
+        }
         .complete {
             background-color: #dff0d8;
             color: black;
-        }    
+        }
         .incomplete {
             background-color: #ff0000;
             color: white;
@@ -99,12 +95,12 @@
             border: none;
             background-color: transparent;
             resize: none;
-            padding:20px;
+            padding: 20px;
             box-sizing: border-box;
         }
         .header-right img {
             width: 22%;
-        height: 110%;
+            height: 110%;
             position: absolute;
             top: 0px;
             right: 10px;
@@ -121,83 +117,17 @@
             cursor: pointer;
             font-size: 16px;
         }
-
     </style>
-    <script>
-     const localStorageKey = 'checklistData_DAOTAO';
-
-    document.addEventListener('DOMContentLoaded', function () {
-            loadSavedData();
-
-            document.querySelectorAll('select.checkbox').forEach(select => {
-                select.addEventListener('change', function () {
-                    updateCellBackground(this);
-                    saveData();
-                });
-            });
-
-            document.querySelectorAll('textarea').forEach(textarea => {
-                textarea.addEventListener('input', saveData);
-            });
-       document.getElementById('clear-btn').addEventListener('click', clearData);
-        });
-
-        function updateCellBackground(selectElement) {
-            const cell = selectElement.parentElement;
-            cell.classList.remove('complete', 'incomplete');
-            if (selectElement.value === 'Hoàn Thành') {
-                cell.classList.add('complete');
-            } else if (selectElement.value === 'Cần xem lại') {
-                cell.classList.add('incomplete');
-            }
-        }
-function saveData() {
-            const data = {
-                selects: Array.from(document.querySelectorAll('select.checkbox')).map(select => select.value),
-                textareas: Array.from(document.querySelectorAll('textarea')).map(textarea => textarea.value)
-            };
-            localStorage.setItem(localStorageKey, JSON.stringify(data));
-        }
-
-        function loadSavedData() {
-            const data = JSON.parse(localStorage.getItem(localStorageKey));
-            if (data) {
-                const selects = document.querySelectorAll('select.checkbox');
-                const textareas = document.querySelectorAll('textarea');
-
-                data.selects.forEach((value, index) => {
-                    selects[index].value = value;
-                    updateCellBackground(selects[index]);
-                });
-
-                data.textareas.forEach((value, index) => {
-                    textareas[index].value = value;
-                });
-            }
-        }
-    function clearData() {
-            document.querySelectorAll('select.checkbox').forEach(select => {
-                select.value = '';
-                updateCellBackground(select);
-            });
-
-            document.querySelectorAll('textarea').forEach(textarea => {
-                textarea.value = '';
-            });
-
-            localStorage.removeItem(localStorageKey); // Clear the data from localStorage
-        }
-    </script>
 </head>
 <body>
 <div class="container">
     <div class="header">
-            <img src="../images/dayhocvaluyenthi_logo.png" alt="Logo">
-            <h1>CHECKLIST BỘ PHẬN ĐÀO TẠO</h1>
+        <img src="../images/dayhocvaluyenthi_logo.png" alt="Logo">
+        <h1>CHECKLIST BỘ PHẬN DỊCH VỤ</h1>
         <div class="header-right">
-                <img src="../images/3.png" alt="Icon">
-            </div>
+            <img src="../images/3.png" alt="Icon">
         </div>
+    </div>
     <table>
         <thead>
             <tr>
@@ -213,89 +143,170 @@ function saveData() {
         </thead>
         <tbody>
             <tr class="task-row">
-                <td> Chuẩn bị và tổ chức các buổi đào tạo nội bộ </td>
-                <!-----------------------------Thứ 2-------------------------------->
+                <td>Tiếp nhận và xử lý yêu cầu khách hàng</td>
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 3-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 4-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 5-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 6-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 7-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Ghi Chú-------------------------------->
-                 <td><textarea></textarea></td>
-            </tr>
-        <td> Hỗ trợ nhân viên </td>
-                <!-----------------------------Thứ 2-------------------------------->
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 3-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 4-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 5-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 6-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 7-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Ghi Chú-------------------------------->
-                 <td><textarea></textarea></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><textarea></textarea></td>
             </tr>
             <tr class="task-row">
-                <td> Theo dõi và ghi nhận phản hồi </td>
-                 <!-----------------------------Thứ 2-------------------------------->
+                <td>Cập nhật thông tin khách hàng</td>
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 3-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 4-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 5-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 6-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 7-------------------------------->
-        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Ghi Chú-------------------------------->
-                 <td><textarea></textarea></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><textarea></textarea></td>
             </tr>
-                        <tr class="note">
-                <tr class="note">
+            <tr class="task-row">
+                <td>Hỗ trợ khách hàng tại trung tâm</td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr class="task-row">
+                <td>Theo dõi và ghi nhận phản hồi</td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr class="note">
                 <td>Hàng Tuần</td>
-        <!-----------------------------Thứ 2-------------------------------->
-                <td>Giảng dạy và hướng dẫn<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 3-------------------------------->
-                <td>Kiểm tra và đánh giá phương pháp giảng dạy<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 4-------------------------------->
-                <td></td> 
-        <!-----------------------------Thứ 5-------------------------------->
-               <td>Báo cáo kết quả đào tạo<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 6-------------------------------->
-                <td>Lên kế hoạch đào tạo<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-        <!-----------------------------Thứ 7-------------------------------->
-		 <td>Tổ chức các buổi đào tạo định kỳ</td>
-        <!-----------------------------Ghi Chú-------------------------------->
-                 <td><textarea></textarea></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><textarea></textarea></td>
             </tr>
-             <tr class="note">
+            <tr class="note">
                 <td>Hàng tháng</td>
-                <td>Đánh giá hiệu quả các khóa học đã diễn ra (vào ngày25 hàng tháng )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td>Nhắc nhở học viên đóng học phí lần 1 (vào ngày 1 hàng tháng )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
                 <td></td>
-        <td>Lập kế hoạch phát triển dài hạn(vào ngày 30hàng tháng )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-                <td></td>
-                <td>Lên kế hoạch cho các sự kiện đặc biệt( Sự kiện theo Quý hoặc ngày đặt biệt )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-                <td> </td>
-                 <td><textarea></textarea></td>
+                <td>Nhắc nhở học viên đóng học phí lần 2 (vào ngày 15 hàng tháng )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td>Nộp báo cáo kết quả hoạt động kinh doanh ( vào ngày 20)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td>Lên kế hoạch cho các sự kiện đặc biệt (Sự kiện theo Quý hoặc ngày đặc biệt )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td>Tổ chức các buổi gặp gỡ với phụ huynh<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><textarea></textarea></td>
             </tr>
-                   </tbody>
+        </tbody>
     </table>
     <div class="footer">
-            "Truyền cảm hứng, nâng tầm giá trị!"
-        </div>
+        "Tạo giá trị từ từng trải nghiệm!"
+    </div>
     <button id="clear-btn" class="clear-btn">Clear</button>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCJixI6QgUDNWv-6NPWLMcxhJ6IljXh_BE",
+  	authDomain: "tuenamcompany-no1.firebaseapp.com",
+  	projectId: "tuenamcompany-no1",
+  	storageBucket: "tuenamcompany-no1.appspot.com",
+  	messagingSenderId: "294442526766",
+  	appId: "1:294442526766:web:5478cee4fc6d8488f857bf",
+  	measurementId: "G-PZCRZKTQF8"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    document.addEventListener('DOMContentLoaded', function () {
+        loadSavedData();
+
+        document.querySelectorAll('select.checkbox').forEach(select => {
+            select.addEventListener('change', function () {
+                updateCellBackground(this);
+                saveData();
+            });
+        });
+
+        document.querySelectorAll('textarea').forEach(textarea => {
+            textarea.addEventListener('input', saveData);
+        });
+
+        document.getElementById('clear-btn').addEventListener('click', clearData);
+    });
+
+    function updateCellBackground(selectElement) {
+        const cell = selectElement.parentElement;
+        cell.classList.remove('complete', 'incomplete');
+        if (selectElement.value === 'Hoàn Thành') {
+            cell.classList.add('complete');
+        } else if (selectElement.value === 'Cần xem lại') {
+            cell.classList.add('incomplete');
+        }
+    }
+
+    function saveData() {
+        const data = {
+            selects: Array.from(document.querySelectorAll('select.checkbox')).map(select => select.value),
+            textareas: Array.from(document.querySelectorAll('textarea')).map(textarea => textarea.value)
+        };
+        db.collection("checklist").doc("DICHVU").set(data)
+            .then(() => {
+                console.log("Document successfully written!");
+            })
+            .catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+    }
+
+    function loadSavedData() {
+        db.collection("checklist").doc("DICHVU").get().then((doc) => {
+            if (doc.exists) {
+                const data = doc.data();
+                const selects = document.querySelectorAll('select.checkbox');
+                const textareas = document.querySelectorAll('textarea');
+
+                data.selects.forEach((value, index) => {
+                    selects[index].value = value;
+                    updateCellBackground(selects[index]);
+                });
+
+                data.textareas.forEach((value, index) => {
+                    textareas[index].value = value;
+                });
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+    }
+
+    function clearData() {
+        document.querySelectorAll('select.checkbox').forEach(select => {
+            select.value = '';
+            updateCellBackground(select);
+        });
+
+        document.querySelectorAll('textarea').forEach(textarea => {
+            textarea.value = '';
+        });
+
+        db.collection("checklist").doc("DICHVU").delete().then(() => {
+            console.log("Document successfully deleted!");
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
+</script>
 </body>
 </html>
