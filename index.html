@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TueNamLinkList</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333; /* Màu nền tổng thể */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #4B70F5; /* Màu nền table lớn */
+            padding: 30px;
+            border-radius: 20px; /* Đường viền bo tròn */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 90%; /* Sử dụng phần trăm để thích hợp với các thiết bị khác nhau */
+            max-width: 400px; /* Đảm bảo không quá rộng trên màn hình lớn */
+            text-align: center;
+            position: relative;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .logo {
+            max-width: 50%;
+            height: auto;
+        }
+        .logo-1 {
+            max-width: 40%;
+        }
+        .logo-2 {
+            max-width: 60%;
+        }
+        h1 {
+            color: #ffc107; /* Màu chữ TueNamLinkList */
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #add8e6; /* Màu nền cho ô nhập */
+            color: #000;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: transparent; /* Đặt nền trong suốt */
+            color: #ffc107;
+            margin-bottom: 10px;
+            font-size: 1.2em; /* Tăng kích thước chữ trong Combobox*/
+        }
+        button {
+            width: 25%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .option-3 {
+            background-color: #ffc107;
+            color: white;
+        }
+        .small-option-10 {
+            background-color: #A1DD70;
+            color: black;
+        }
+        .clear-btn {
+            width: 20%;
+            background-color: #E4003A;
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            transform: translate(10%, 50%);
+        }
+        .info, .error {
+            color: white;
+        }
+        .error {
+            color: red; /* Đổi màu chữ thành đỏ */
+            margin-top: 20px;
+            font-size: 1em; /* Giữ kích thước chữ */
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            text-align: left;
+        }
+        .link-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div>
+                <img class="logo logo-1" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9014c770c45dd83990edcdcc45efd26a36dcb6c4cbf39c8f8da47b1f287b4c07?apiKey=7ff81b0ad38544f78863440788161989&" alt="Logo 1">
+            </div>
+            <div>
+                <img class="logo logo-2" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a92137c144c2ae56b0a533695fe8645939618d8d08871dda04fc829c076d555?apiKey=7ff81b0ad38544f78863440788161989&" alt="Logo 2">
+            </div>
+        </div>
+        <h1>TueNamLinkList</h1>
+        <input type="text" id="linkInput" placeholder="Nhập link tại đây">
+        <input type="text" id="infoInput" placeholder="Nhập thông tin tại đây">
+        <button class="option-3" onclick="addLink()">Add Link</button>
+        <div class="link-btn" id="linkButtonContainer">
+            <button class="small-option-10" id="openLinkButton" style="display: none;" onclick="openLink()">Open Link</button>
+        </div>
+        <select id="linksContainer" class="links" onchange="showLink()">
+        </select>
+        <div class="error" id="errorDisplay"></div>
+        <button class="clear-btn option-10" onclick="clearLinks()">Clear</button>
+    </div>
+
+    <script>
+        const linksContainer = document.getElementById('linksContainer');
+        const linkInput = document.getElementById('linkInput');
+        const infoInput = document.getElementById('infoInput');
+        const errorDisplay = document.getElementById('errorDisplay');
+        const linkButtonContainer = document.getElementById('linkButtonContainer');
+        const openLinkButton = document.getElementById('openLinkButton');
+
+        // Các link mặc định
+        const defaultLinks = [
+            { link: 'https://vsijs.github.io/tuenam/KinhDoanh/', info: 'Bộ Phận Kinh Doanh' },
+            { link: 'https://vsijs.github.io/tuenam/KeToan/', info: 'Bộ Phận Kế Toán' },
+            { link: 'https://vsijs.github.io/tuenam/QuangCao/', info: 'Bộ Phận Quảng Cáo' },
+            { link: 'https://vsijs.github.io/tuenam/NhanSu/', info: 'Bộ Phận Nhân Sự' }
+        ];
+
+        // Load saved links and info from local storage
+        function loadLinks() {
+            const links = JSON.parse(localStorage.getItem('links')) || [];
+            if (links.length === 0) {
+                defaultLinks.forEach(linkObj => addLinkToDOM(linkObj.link, linkObj.info)); // Thêm link mặc định vào DOM
+            } else {
+                links.forEach(linkObj => addLinkToDOM(linkObj.link, linkObj.info));
+            }
+            if (linksContainer.options.length > 0) {
+                showLink();
+            }
+        }
+
+        // Add link and info to the DOM
+        function addLinkToDOM(link, info) {
+            const option = document.createElement('option');
+            option.textContent = info;
+            option.value = link;
+            linksContainer.appendChild(option);
+        }
+
+        // Add link and info to local storage and DOM
+        function addLink() {
+            const link = linkInput.value;
+            const info = infoInput.value;
+
+            if (!link || !info) {
+                errorDisplay.textContent = 'Điền thiếu thông tin';
+                return;
+            }
+
+            const links = JSON.parse(localStorage.getItem('links')) || [];
+
+            // Check for duplicates
+            const linkExists = links.some(linkObj => linkObj.link === link);
+            const infoExists = links.some(linkObj => linkObj.info === info);
+
+            if (linkExists) {
+                errorDisplay.textContent = 'Link này đã có xin nhập Link khác';
+                return;
+            }
+
+            if (infoExists) {
+                errorDisplay.textContent = 'Thông tin đã bị trùng xin nhập tên thông tin khác';
+                return;
+            }
+
+            errorDisplay.textContent = '';
+            links.push({ link, info });
+            localStorage.setItem('links', JSON.stringify(links));
+            addLinkToDOM(link, info);
+            linkInput.value = '';
+            infoInput.value = '';
+            showLink();
+        }
+
+        // Clear all links and info except default links
+        function clearLinks() {
+            localStorage.removeItem('links');
+            linksContainer.innerHTML = '';
+            defaultLinks.forEach(linkObj => addLinkToDOM(linkObj.link, linkObj.info)); // Thêm link mặc định vào DOM
+            openLinkButton.style.display = 'none';
+            linkInput.value = '';
+            infoInput.value = '';
+        }
+
+        // Show link associated with selected info
+        function showLink() {
+            const selectedOption = linksContainer.options[linksContainer.selectedIndex];
+            if (selectedOption) {
+                openLinkButton.style.display = 'block';
+            }
+        }
+
+        // Open link in new tab
+        function openLink() {
+            const selectedOption = linksContainer.options[linksContainer.selectedIndex];
+            if (selectedOption) {
+                const link = selectedOption.value;
+                window.open(link, '_blank');
+            }
+        }
+
+        // Initialize
+        loadLinks();
+    </script>
+</body>
+</html>
