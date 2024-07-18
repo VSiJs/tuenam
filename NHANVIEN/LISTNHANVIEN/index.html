@@ -21,8 +21,8 @@
             padding: 30px;
             border-radius: 20px; /* Đường viền bo tròn */
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            width: 90%; /* Sử dụng phần trăm để thích hợp với các thiết bị khác nhau */
-            max-width: 400px; /* Đảm bảo không quá rộng trên màn hình lớn */
+            width: 120%; /* Sử dụng phần trăm để thích hợp với các thiết bị khác nhau */
+            max-width: 600px; /* Đảm bảo không quá rộng trên màn hình lớn */
             text-align: center;
             position: relative;
         }
@@ -32,31 +32,22 @@
             margin-bottom: 20px;
         }
         .logo {
-            max-width: 50%;
+            max-width: 60%;
             height: auto;
         }
         .logo-1 {
-            max-width: 40%;
+            max-width: 80%;
         }
         .logo-2 {
-            max-width: 60%;
+            max-width: 80%
         }
         h1 {
             color: #ffc107; /* Màu chữ TueNamLinkList */
             margin-top: 0;
             margin-bottom: 20px;
         }
-        input[type="text"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #add8e6; /* Màu nền cho ô nhập */
-            color: #000;
-        }
-        select {
-            width: 100%;
+               select {
+            width: 120%;
             padding: 10px;
             border: none;
             border-radius: 10px;
@@ -84,16 +75,7 @@
             background-color: #A1DD70;
             color: black;
         }
-        .clear-btn {
-            width: 20%;
-            background-color: #E4003A;
-            color: white;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            transform: translate(10%, 50%);
-        }
-        .info, .error {
+               .info, .error {
             color: white;
         }
         .error {
@@ -128,10 +110,6 @@
         </div>
         <select id="linksContainer" class="links" onchange="showLink()">
         </select>
-        <div class="error" id="errorDisplay"></div>
-        <button class="clear-btn option-10" onclick="clearLinks()">Clear</button>
-    </div>
-
     <script>
         const linksContainer = document.getElementById('linksContainer');
         const errorDisplay = document.getElementById('errorDisplay');
