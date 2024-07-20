@@ -123,18 +123,12 @@
             </div>
         </div>
         <h1>TueNamLinkList</h1>
-        <input type="text" id="linkInput" placeholder="Nhập link tại đây">
-        <input type="text" id="infoInput" placeholder="Nhập thông tin tại đây">
-        <button class="option-3" onclick="addLink()">Add Link</button>
         <div class="link-btn" id="linkButtonContainer">
             <button class="small-option-10" id="openLinkButton" style="display: none;" onclick="openLink()">Open Link</button>
         </div>
         <select id="linksContainer" class="links" onchange="showLink()">
         </select>
-        <div class="error" id="errorDisplay"></div>
-        <button class="clear-btn option-10" onclick="clearLinks()">Clear</button>
     </div>
-
     <script>
         const linksContainer = document.getElementById('linksContainer');
         const linkInput = document.getElementById('linkInput');
@@ -160,8 +154,6 @@
             { link: 'https://vsijs.github.io/tuenam/NhanSu/', info: 'Bộ Phận Nhân Sự' },
             { link: 'https://vsijs.github.io/tuenam/TuyenDung/', info: 'Bộ Phận Tuyển Dụng' },
             { link: 'https://vsijs.github.io/tuenam/DaoTao/', info: 'Bộ Phận Đào Tạo' }
-        ];
-
         // Load saved links and info from local storage
         function loadLinks() {
             const links = JSON.parse(localStorage.getItem('links')) || [];
@@ -174,7 +166,6 @@
                 showLink();
             }
         }
-
         // Add link and info to the DOM
         function addLinkToDOM(link, info) {
             const option = document.createElement('option');
@@ -182,52 +173,6 @@
             option.value = link;
             linksContainer.appendChild(option);
         }
-
-        // Add link and info to local storage and DOM
-        function addLink() {
-            const link = linkInput.value;
-            const info = infoInput.value;
-
-            if (!link || !info) {
-                errorDisplay.textContent = 'Điền thiếu thông tin';
-                return;
-            }
-
-            const links = JSON.parse(localStorage.getItem('links')) || [];
-
-            // Check for duplicates
-            const linkExists = links.some(linkObj => linkObj.link === link);
-            const infoExists = links.some(linkObj => linkObj.info === info);
-
-            if (linkExists) {
-                errorDisplay.textContent = 'Link này đã có xin nhập Link khác';
-                return;
-            }
-
-            if (infoExists) {
-                errorDisplay.textContent = 'Thông tin đã bị trùng xin nhập tên thông tin khác';
-                return;
-            }
-
-            errorDisplay.textContent = '';
-            links.push({ link, info });
-            localStorage.setItem('links', JSON.stringify(links));
-            addLinkToDOM(link, info);
-            linkInput.value = '';
-            infoInput.value = '';
-            showLink();
-        }
-
-        // Clear all links and info except default links
-        function clearLinks() {
-            localStorage.removeItem('links');
-            linksContainer.innerHTML = '';
-            defaultLinks.forEach(linkObj => addLinkToDOM(linkObj.link, linkObj.info)); // Thêm link mặc định vào DOM
-            openLinkButton.style.display = 'none';
-            linkInput.value = '';
-            infoInput.value = '';
-        }
-
         // Show link associated with selected info
         function showLink() {
             const selectedOption = linksContainer.options[linksContainer.selectedIndex];
@@ -235,7 +180,6 @@
                 openLinkButton.style.display = 'block';
             }
         }
-
         // Open link in new tab
         function openLink() {
             const selectedOption = linksContainer.options[linksContainer.selectedIndex];
@@ -244,7 +188,6 @@
                 window.open(link, '_blank');
             }
         }
-
         // Initialize
         loadLinks();
     </script>
