@@ -36,10 +36,10 @@
             height: auto;
         }
         .logo-1 {
-            max-width: 40%;
+            max-width: 80%;
         }
         .logo-2 {
-            max-width: 60%;
+            max-width: 80%;
         }
         h1 {
             color: #ffc107; /* Màu chữ TueNamLinkList */
@@ -84,26 +84,8 @@
             background-color: #A1DD70;
             color: black;
         }
-        .clear-btn {
-            width: 20%;
-            background-color: #E4003A;
-            color: white;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            transform: translate(10%, 50%);
-        }
         .info, .error {
             color: white;
-        }
-        .error {
-            color: red; /* Đổi màu chữ thành đỏ */
-            margin-top: 20px;
-            font-size: 1em; /* Giữ kích thước chữ */
-            position: absolute;
-            left: 10px;
-            bottom: 10px;
-            text-align: left;
         }
         .link-btn {
             display: flex;
@@ -129,15 +111,12 @@
         <select id="linksContainer" class="links" onchange="showLink()">
         </select>
     </div>
-
     <script>
         const linksContainer = document.getElementById('linksContainer');
         const linkInput = document.getElementById('linkInput');
         const infoInput = document.getElementById('infoInput');
-        const errorDisplay = document.getElementById('errorDisplay');
         const linkButtonContainer = document.getElementById('linkButtonContainer');
         const openLinkButton = document.getElementById('openLinkButton');
-
         // Các link mặc định
         const defaultLinks = [
             { link: 'https://vsijs.github.io/tuenam/NHANVIEN/LISTNHANVIENCV/', info: 'BẢNG CẬP NHẬT CHECK LIST' },
@@ -156,7 +135,6 @@
             { link: 'https://vsijs.github.io/tuenam/TuyenDung/', info: 'Bộ Phận Tuyển Dụng' },
             { link: 'https://vsijs.github.io/tuenam/DaoTao/', info: 'Bộ Phận Đào Tạo' }
         ];
-
         // Load saved links and info from local storage
         function loadLinks() {
             const links = JSON.parse(localStorage.getItem('links')) || [];
@@ -169,7 +147,6 @@
                 showLink();
             }
         }
-
         // Add link and info to the DOM
         function addLinkToDOM(link, info) {
             const option = document.createElement('option');
@@ -177,7 +154,6 @@
             option.value = link;
             linksContainer.appendChild(option);
         }
-
         // Show link associated with selected info
         function showLink() {
             const selectedOption = linksContainer.options[linksContainer.selectedIndex];
@@ -185,7 +161,6 @@
                 openLinkButton.style.display = 'block';
             }
         }
-
         // Open link in new tab
         function openLink() {
             const selectedOption = linksContainer.options[linksContainer.selectedIndex];
@@ -194,7 +169,6 @@
                 window.open(link, '_blank');
             }
         }
-
         // Initialize
         loadLinks();
     </script>
