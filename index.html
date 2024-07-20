@@ -129,6 +129,7 @@
         <select id="linksContainer" class="links" onchange="showLink()">
         </select>
     </div>
+
     <script>
         const linksContainer = document.getElementById('linksContainer');
         const linkInput = document.getElementById('linkInput');
@@ -154,6 +155,8 @@
             { link: 'https://vsijs.github.io/tuenam/NhanSu/', info: 'Bộ Phận Nhân Sự' },
             { link: 'https://vsijs.github.io/tuenam/TuyenDung/', info: 'Bộ Phận Tuyển Dụng' },
             { link: 'https://vsijs.github.io/tuenam/DaoTao/', info: 'Bộ Phận Đào Tạo' }
+        ];
+
         // Load saved links and info from local storage
         function loadLinks() {
             const links = JSON.parse(localStorage.getItem('links')) || [];
@@ -166,6 +169,7 @@
                 showLink();
             }
         }
+
         // Add link and info to the DOM
         function addLinkToDOM(link, info) {
             const option = document.createElement('option');
@@ -173,6 +177,7 @@
             option.value = link;
             linksContainer.appendChild(option);
         }
+
         // Show link associated with selected info
         function showLink() {
             const selectedOption = linksContainer.options[linksContainer.selectedIndex];
@@ -180,6 +185,7 @@
                 openLinkButton.style.display = 'block';
             }
         }
+
         // Open link in new tab
         function openLink() {
             const selectedOption = linksContainer.options[linksContainer.selectedIndex];
@@ -188,6 +194,7 @@
                 window.open(link, '_blank');
             }
         }
+
         // Initialize
         loadLinks();
     </script>
