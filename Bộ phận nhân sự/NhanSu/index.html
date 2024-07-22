@@ -217,7 +217,7 @@ function saveData() {
         </thead>
          <tbody>
             <tr class="task-row">
-                <td> Lên kế hoạch công việc </td>
+                <td> <b>Chấm công</b> </td>
                 <!-----------------------------Thứ 2-------------------------------->
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Thứ 3-------------------------------->
@@ -233,7 +233,7 @@ function saveData() {
 		<!-----------------------------Ghi Chú-------------------------------->
                  <td><textarea></textarea></td>
             </tr>	
-		<td> Phân phối công việc </td>
+		<td> <b>Checklist vệ sinh</b> </td>
                 <!-----------------------------Thứ 2-------------------------------->
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Thứ 3-------------------------------->
@@ -249,60 +249,47 @@ function saveData() {
 		<!-----------------------------Ghi Chú-------------------------------->
                  <td><textarea></textarea></td>
             </tr>
-                <td> Theo dõi tiến độ cập nhập CheckList </td>
-                 <!-----------------------------Thứ 2-------------------------------->
-                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 3-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 4-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 5-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 6-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 7-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td> <b>Gửi biên bản báo cáo zalo cho sếp Lâm</b> </td>
+		
 		<!-----------------------------Ghi Chú-------------------------------->
                  <td><textarea></textarea></td>
-            </tr>
-                <td>Chấm công</td>
-                 <!-----------------------------Thứ 2-------------------------------->
-                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 3-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 4-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 5-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 6-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Thứ 7-------------------------------->
-		<td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-		<!-----------------------------Ghi Chú-------------------------------->
-                 <td><textarea></textarea></td>
-            </tr>
-                        <tr class="note">
-                <tr class="note">
-                <td>Hàng Tuần</td>
+       <tr class="note">
+                <td><b>Hàng Tuần</b></td>
 		<!-----------------------------Thứ 2-------------------------------->
-                <td></td>
+                <td>Kiểm tra bộ phận dịch vụ <select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Thứ 3-------------------------------->
-		<td></td>   
+		<td>Kiểm tra bộ phận tài liệu<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>   
 		<!-----------------------------Thứ 4-------------------------------->
-		<td></td>
+				<td>Kiểm tra bộ phận quảng cáo, kinh doanh lần 1<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Thứ 5-------------------------------->
-                <td></td>
+                <td>Kiểm tra bộ phận đào tạo<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Thứ 6-------------------------------->
-                <td>Cập nhật và lưu trữ hồ sơ nhân viên<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td>Kiểm tra bộ phận quảng cáo, kinh doanh lần 2<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Thứ 7-------------------------------->
-		<td>Báo cáo nhân sự<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+		<td>Kiểm tra bộ phận kế toán <select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
 		<!-----------------------------Ghi Chú-------------------------------->
                  <td><textarea></textarea></td>
             </tr>
-                   </tbody>
-
+                <tr class="note">
+                <td><b>Hàng Tháng</b></td>
+		<!-----------------------------Thứ 2-------------------------------->
+        <td>Tổng hợp bảng chấm công(Vào ngày 1)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+		<!-----------------------------Thứ 3-------------------------------->
+		<td>Đánh giá hiệu suất làm việc của từng nhân viên trong tháng(Vào ngày 15)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>   
+		<!-----------------------------Thứ 4-------------------------------->
+		<td>Lập báo cáo tổng kết tháng về hoạt động của từng bộ phận(Vào ngày 25)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+		<!-----------------------------Thứ 5-------------------------------->
+        <td></td>
+		<!-----------------------------Thứ 6-------------------------------->
+        <td></td>
+		<!-----------------------------Thứ 7-------------------------------->
+		<td>Lên kế hoạch công việc và mục tiêu cho tháng tiếp theo(Vào ngày 30)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+		<!-----------------------------Ghi Chú-------------------------------->
+        <td><textarea></textarea></td>
+            </tr>
+	</tbody>
     </table>
- 	<div class="footer">
+ 		<div class="footer">
             "Mỗi nhân viên là một mảnh ghép hoàn hảo!"
         </div>
 	<button id="clear-btn" class="clear-btn">Clear</button>
