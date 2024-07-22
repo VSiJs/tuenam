@@ -7,47 +7,56 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #f4f4f4;
-	    background-image: url(' 5.png');
+            background-image: url('5.png');
+            background-size: 120%;
             color: #333;
+            width: 100%;
         }
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
         }
         .box {
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 5px 10px;
             text-align: center;
-            margin: 10px;
+            margin: 5px;
             background-color: #ffcc00;
             width: fit-content;
             cursor: pointer;
+            max-width: 100%;
+            font-size: 1.3em;
         }
         .branch {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
+            width: 100%;
         }
         .sub-branch {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 10px;
+            margin: 5px;
+            max-width: 100%;
         }
         .sub-box {
             border: 1px solid #333;
-            border-radius: 10px;
-            padding: 10px 20px;
-            margin: 5px 0;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 3px 0;
             width: fit-content;
             cursor: pointer;
+            max-width: 100%;
+            font-size: 1.3 em;
         }
         .sub-box-green {
             background-color: #66cc66;
@@ -62,27 +71,25 @@
             background-color: #9966cc;
         }
         .description {
-            margin-top: 5px;
-            font-size: 0.9em;
+            margin-top: 3px;
+            font-size: 0.85em;
             text-align: center;
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
     <div class="container">
-	<!--Điền Link ở onclick=onclick="window.location.href='linkcandienvao'"-->
         <div class="box" onclick="window.location.href='link_to_CEO'">Giám đốc điều hành (CEO): Lâm</div>
         <div class="branch">
-            <!-- Bộ phận Tiếp thị -->
             <div class="sub-branch">
                 <div class="box sub-box sub-box-yellow" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tiếp thị/TruongBoPhanTiepThi/'">Trưởng bộ phận Tiếp thị: Lâm</div>
                 <div class="description">Quản lý và giám sát toàn bộ hoạt động tiếp thị của trung tâm.</div>
-                <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tiếp thị/DichVu/'">Chuyên viên Dịch vụ:Thảo</div>
+                <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tiếp thị/DichVu/'">Chuyên viên Dịch vụ: Thảo</div>
                 <div class="description">Hỗ trợ khách hàng và giải quyết các thắc mắc liên quan đến dịch vụ.</div>
-                <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tiếp thị/KinhDoanh/'">Chuyên viên Kinh doanh và quảng cáo: Minh, Sĩ, Thảo, Ngân</div>
+                <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tiếp thị/KinhDoanh/'">Chuyên viên Kinh doanh và quảng cáo: <br>Minh, Sĩ, Thảo, Ngân</br></div>
                 <div class="description">Tìm kiếm và phát triển mối quan hệ với khách hàng tiềm năng.</div>
             </div>
-            <!-- Bộ phận Tài chính -->
             <div class="sub-branch">
                 <div class="box sub-box sub-box-yellow" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tài chính/TruongTaiChinh/'">Trưởng bộ phận Tài chính: My</div>
                 <div class="description">Quản lý và giám sát các hoạt động tài chính của trung tâm.</div>
@@ -91,12 +98,11 @@
                 <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận tài chính/ThuChi/'">Chuyên viên Thu chi: My</div>
                 <div class="description">Quản lý và ghi chép các khoản thu chi hàng ngày.</div>
             </div>
-            <!-- Bộ phận Sản xuất -->
             <div class="sub-branch">
                 <div class="box sub-box sub-box-yellow" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận giảng dạy/TruongBoPhanGiangDay/'">Trưởng bộ phận Giảng dạy: My</div>
                 <div class="description">Quản lý và giám sát các hoạt động sản xuất của trung tâm.</div>
-                <div class="sub-box sub-box-green"              	onclick="window.location.href='https://vsijs.github.io/tuenam/B%E1%BB%99%20ph%E1%BA%ADn%20gi%E1%BA%A3ng%20d%E1%BA%A1y/BoPhanSanXuat/'">Bộ phận sản xuất</div>
-                <div class="sub-box sub-box-green"              	onclick="window.location.href='https://vsijs.github.io/tuenam/B%E1%BB%99%20ph%E1%BA%ADn%20gi%E1%BA%A3ng%20d%E1%BA%A1y/BoPhanGiaoVien/'">Giáo viên Toán: Lâm</div>
+                <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/B%E1%BB%99%20ph%E1%BA%ADn%20gi%E1%BA%A3ng%20d%E1%BA%A1y/BoPhanSanXuat/'">Bộ phận sản xuất</div>
+                <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/B%E1%BB%99%20ph%E1%BA%ADn%20gi%E1%BA%A3ng%20d%E1%BA%A1y/BoPhanGiaoVien/'">Giáo viên Toán: Lâm</div>
                 <div class="description">Giảng dạy môn Toán.</div>
                 <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/B%E1%BB%99%20ph%E1%BA%ADn%20gi%E1%BA%A3ng%20d%E1%BA%A1y/BoPhanGiaoVien/'">Giáo viên Tiếng Anh: My</div>
                 <div class="description">Giảng dạy môn Tiếng Anh.</div>
@@ -105,7 +111,6 @@
                 <div class="sub-box sub-box-green" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận giảng dạy/TaiLieuHocTap'">Chuyên viên Tài liệu học tập: Ngân</div>
                 <div class="description">Phát triển và quản lý tài liệu học tập cho các khóa học.</div>
             </div>
-            <!-- Bộ phận Nhân sự -->
             <div class="sub-branch">
                 <div class="box sub-box sub-box-yellow" onclick="window.location.href='https://vsijs.github.io/tuenam/Bộ phận nhân sự/TruongBoPhanNhanSu/'">Trưởng bộ phận Nhân sự: Lâm</div>
                 <div class="description">Quản lý và giám sát các hoạt động nhân sự của trung tâm.</div>
