@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=vietnamese" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>CHECKLIST TRƯỞNG BỘ PHẬN TÀI CHÍNH</title>
+   <style>
+        body {
+           font-family: 'Roboto', sans-serif;
+           font-size: 16px;
+           line-height: 1.5;
+           color: #333;
+           background-image: url('../images/Thiết kế 0 tên.png'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+           margin: 0;
+            padding: 0;
+        
+        }
+     .header img {
+            height: 50px;
+        }
+    
+    .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a9d8f;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+     h1 {
+            margin: 0;
+            font-size: 1.5em;
+            align-items: center;
+        }
+     .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 50px;
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+            position: relative;
+            min-width: 720px; 
+            z-index: 1;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0;
+            text-align: center;
+            width: 12.5%;
+        }
+        th {
+            background-color: #4CAF50;
+            color: black;
+        }
+    .footer{
+        text-align: center;
+            margin-top: 20px;
+                font-weight: bold;
+                color: #e76f51
+    }
+        .complete {
+            background-color: #dff0d8;
+            color: black;
+        }    
+        .incomplete {
+            background-color: #ff0000;
+            color: white;
+        }
+        .note {
+            background-color: #fcf8e3;
+        }
+        .checkbox {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            color: #06D001;
+        }
+        textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            resize: none;
+            padding:20px;
+            box-sizing: border-box;
+        }
+        .header-right img {
+            width: 22%;
+        height: 110%;
+            position: absolute;
+            top: 0px;
+            right: 10px;
+        }
+        .clear-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+    </style>
+    <script>
+     const localStorageKey = 'checklistData_TRUONGTAICHINH';
+
+    document.addEventListener('DOMContentLoaded', function () {
+            loadSavedData();
+
+            document.querySelectorAll('select.checkbox').forEach(select => {
+                select.addEventListener('change', function () {
+                    updateCellBackground(this);
+                    saveData();
+                });
+            });
+
+            document.querySelectorAll('textarea').forEach(textarea => {
+                textarea.addEventListener('input', saveData);
+            });
+       document.getElementById('clear-btn').addEventListener('click', clearData);
+        });
+
+        function updateCellBackground(selectElement) {
+            const cell = selectElement.parentElement;
+            cell.classList.remove('complete', 'incomplete');
+            if (selectElement.value === 'Hoàn Thành') {
+                cell.classList.add('complete');
+            } else if (selectElement.value === 'Cần xem lại') {
+                cell.classList.add('incomplete');
+            }
+        }
+function saveData() {
+            const data = {
+                selects: Array.from(document.querySelectorAll('select.checkbox')).map(select => select.value),
+                textareas: Array.from(document.querySelectorAll('textarea')).map(textarea => textarea.value)
+            };
+            localStorage.setItem(localStorageKey, JSON.stringify(data));
+        }
+
+        function loadSavedData() {
+            const data = JSON.parse(localStorage.getItem(localStorageKey));
+            if (data) {
+                const selects = document.querySelectorAll('select.checkbox');
+                const textareas = document.querySelectorAll('textarea');
+
+                data.selects.forEach((value, index) => {
+                    selects[index].value = value;
+                    updateCellBackground(selects[index]);
+                });
+
+                data.textareas.forEach((value, index) => {
+                    textareas[index].value = value;
+                });
+            }
+        }
+    function clearData() {
+            document.querySelectorAll('select.checkbox').forEach(select => {
+                select.value = '';
+                updateCellBackground(select);
+            });
+
+            document.querySelectorAll('textarea').forEach(textarea => {
+                textarea.value = '';
+            });
+
+            localStorage.removeItem(localStorageKey); // Clear the data from localStorage
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+            <img src="../images/dayhocvaluyenthi_logo.png" alt="Logo">
+            <h1>CHECKLIST TRƯỞNG BỘ PHẬN TÀI CHÍNH (MY)</h1>
+        <div class="header-right">
+                <img src="../images/3.png" alt="Icon">
+            </div>
+        </div>
+    <table>
+        <thead>
+            <tr>
+                <th>CÔNG VIỆC</th>
+                <th>T2</th>
+                <th>T3</th>
+                <th>T4</th>
+                <th>T5</th>
+                <th>T6</th>
+                <th>T7</th>
+                <th>GHI CHÚ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="task-row">
+                <td> <b>Kiểm tra và đối chiếu số liệu từ quỹ tiền mặt và tài khoản ngân hàng của trước đó</b> </td>
+                <!-----------------------------Thứ 2-------------------------------->
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 3-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 4-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 5-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 6-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 7-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Ghi Chú-------------------------------->
+                 <td><textarea></textarea></td>
+            </tr>
+        <td> <b>Cập nhật các khoản thu chi</b> </td>
+                <!-----------------------------Thứ 2-------------------------------->
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 3-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 4-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 5-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 6-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 7-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Ghi Chú-------------------------------->
+                 <td><textarea></textarea></td>
+            </tr>
+            <tr class="task-row">
+                <td> <b>Kiểm tra các hóa đơn và chứng từ từ Thảo</b> </td>
+                 <!-----------------------------Thứ 2-------------------------------->
+                <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 3-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 4-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 5-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 6-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 7-------------------------------->
+        <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Ghi Chú-------------------------------->
+                 <td><textarea></textarea></td>
+            </tr>
+                        <tr class="note">
+                <tr class="note">
+                <td>Hàng Tuần</td>
+        <!-----------------------------Thứ 2-------------------------------->
+                <td><b>Kiểm tra và đối chiếu công nợ phải thu </b>(hỗ trợ nhắc nhở đóng học phí qua zalo)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 3-------------------------------->
+                <td><b>Kiểm tra lại các khoản thu chi phí cố định và chuẩn bị thanh toán nếu cần thiết</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 4-------------------------------->
+                <td><b>Kiểm tra và xác nhận các khoản thu chi đã hoàn thành</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td> 
+        <!-----------------------------Thứ 5-------------------------------->
+               <td><b>Tiếp nhận và giải quyết báo cáo tồn kho VPP của Thảo</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Thứ 6-------------------------------->
+                <td></td>
+        <!-----------------------------Thứ 7-------------------------------->
+		        <td><b>Kiểm tra báo cáo thu chi hàng tuần do Thảo lập</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+        <!-----------------------------Ghi Chú-------------------------------->
+                 <td><textarea></textarea></td>
+            </tr>
+             <tr class="note">
+                <td>Hàng tháng</td>
+                <td><b>Theo dõi định kỳ hàng tháng </b>(Ngày 1)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Phê duyệt bảng lương nhân viên, đảm bảo lương được trả vào ngày 5 hàng tháng </b>(Ngày 2)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Kiểm tra báo cáo tài chính tháng do Thảo  lập </b>(Ngày 3)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Theo dõi lập báo cáo hoạt động kinh doanh, bảng cân đối và bảng lưu chuyển tiền tệ</b> (Ngày 4)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Hướng dẫn Thảo lập kế hoạch tài chính tháng tiếp theo</b>(Ngày 5)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Lập biên bản kiểm kê tài sản</b> (Ngày 25)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                 <td><textarea></textarea></td>
+            </tr>
+                   </tbody>
+    </table>
+</div>
+</body>
+</html>
