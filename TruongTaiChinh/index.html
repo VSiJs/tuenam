@@ -193,7 +193,7 @@ function saveData() {
 <div class="container">
     <div class="header">
             <img src="../images/dayhocvaluyenthi_logo.png" alt="Logo">
-            <h1>CHECKLIST TRƯỞNG BỘ PHẬN TÀI CHÍNH</h1>
+            <h1>CHECKLIST TRƯỞNG BỘ PHẬN TÀI CHÍNH (MY)</h1>
         <div class="header-right">
                 <img src="../images/3.png" alt="Icon">
             </div>
@@ -213,7 +213,7 @@ function saveData() {
         </thead>
         <tbody>
             <tr class="task-row">
-                <td> Quản lý tài chính </td>
+                <td> <b>Kiểm tra và đối chiếu số liệu từ quỹ tiền mặt và tài khoản ngân hàng của trước đó</b> </td>
                 <!-----------------------------Thứ 2-------------------------------->
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Thứ 3-------------------------------->
@@ -229,7 +229,7 @@ function saveData() {
         <!-----------------------------Ghi Chú-------------------------------->
                  <td><textarea></textarea></td>
             </tr>
-        <td> Lập báo cáo tài chính </td>
+        <td> <b>Cập nhật các khoản thu chi</b> </td>
                 <!-----------------------------Thứ 2-------------------------------->
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Thứ 3-------------------------------->
@@ -246,7 +246,7 @@ function saveData() {
                  <td><textarea></textarea></td>
             </tr>
             <tr class="task-row">
-                <td> Quản lý quỹ tiền mặt </td>
+                <td> <b>Kiểm tra các hóa đơn và chứng từ từ Thảo</b> </td>
                  <!-----------------------------Thứ 2-------------------------------->
                 <td><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Thứ 3-------------------------------->
@@ -266,36 +266,32 @@ function saveData() {
                 <tr class="note">
                 <td>Hàng Tuần</td>
         <!-----------------------------Thứ 2-------------------------------->
-                <td></td>
+                <td><b>Kiểm tra và đối chiếu công nợ phải thu </b>(hỗ trợ nhắc nhở đóng học phí qua zalo)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Thứ 3-------------------------------->
-                <td></td>
+                <td><b>Kiểm tra lại các khoản thu chi phí cố định và chuẩn bị thanh toán nếu cần thiết</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Thứ 4-------------------------------->
-                <td></td> 
+                <td><b>Kiểm tra và xác nhận các khoản thu chi đã hoàn thành</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td> 
         <!-----------------------------Thứ 5-------------------------------->
-               <td></td>
+               <td><b>Tiếp nhận và giải quyết báo cáo tồn kho VPP của Thảo</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Thứ 6-------------------------------->
-                <td>Kiểm tra quỹ tiền mặt<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td></td>
         <!-----------------------------Thứ 7-------------------------------->
-		        <td>Đối chiếu và kiểm tra sổ sách<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+		        <td><b>Kiểm tra báo cáo thu chi hàng tuần do Thảo lập</b><select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
         <!-----------------------------Ghi Chú-------------------------------->
                  <td><textarea></textarea></td>
             </tr>
              <tr class="note">
                 <td>Hàng tháng</td>
-                <td>Lập kế hoạch ngân sách(Vào ngày )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-                <td></td>
-                <td>Thanh toán lương nhân viên(Vào ngày )<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-                <td></td>
-                <td>Phát triển và duy trì quan hệ đối tác(Vào ngày)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
-                <td> </td>
+                <td><b>Theo dõi định kỳ hàng tháng </b>(Ngày 1)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Phê duyệt bảng lương nhân viên, đảm bảo lương được trả vào ngày 5 hàng tháng </b>(Ngày 2)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Kiểm tra báo cáo tài chính tháng do Thảo  lập </b>(Ngày 3)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Theo dõi lập báo cáo hoạt động kinh doanh, bảng cân đối và bảng lưu chuyển tiền tệ</b> (Ngày 4)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Hướng dẫn Thảo lập kế hoạch tài chính tháng tiếp theo</b>(Ngày 5)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
+                <td><b>Lập biên bản kiểm kê tài sản</b> (Ngày 25)<select class="checkbox" onchange="updateCellBackground(this)"><option value=""></option><option value="Hoàn Thành">Hoàn Thành</option><option value="Cần xem lại">Cần xem lại</option></select></td>
                  <td><textarea></textarea></td>
             </tr>
                    </tbody>
     </table>
-    <div class="footer">
-            "Tạo giá trị từ từng trải nghiệm!"
-        </div>
-    <button id="clear-btn" class="clear-btn">Clear</button>
 </div>
 </body>
 </html>
