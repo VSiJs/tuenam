@@ -16,14 +16,20 @@ header {
     position: relative;
     text-align: center;
     width: 100%;
-    aspect-ratio: 3 / 1;
     overflow: hidden;
 }
+header::before {
+    content: "";
+    display: block;
+    padding-top: 33.33%; /* 3:1 aspect ratio */
+}
 header .poster-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 /* NÚT CSSBUTTONS-IO */
@@ -150,9 +156,8 @@ header .cssbuttons-io {
 /* MENU GRID */
 .menu-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    justify-content: center;
 }
 
 /* MENU ITEM */
@@ -166,9 +171,9 @@ header .cssbuttons-io {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    min-width: 200px;
-    max-width: 300px;
-    margin: 2% auto 0 auto;
+    width: 100%; /* chiếm full cột */
+    max-width: 100%; /* bỏ giới hạn */
+    margin: 0 auto;
 }
 .menu-item:hover {
     transform: translateY(-5px);
@@ -213,7 +218,7 @@ header .cssbuttons-io {
 
 /* FOOTER */
 footer {
-    background-color: #5d4037;
+    background-color:  #0049AA;
     color: white;
     text-align: center;
     padding: 1.5rem;
@@ -319,3 +324,22 @@ footer {
         gap: 1rem;
     }
 }
+@media (max-width: 480px) {
+    .menu-row {
+        grid-template-columns: 1fr;
+    }
+}
+/* Tablet */
+@media (max-width: 1024px) {
+    .menu-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .menu-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
