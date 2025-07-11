@@ -1,0 +1,65 @@
+body {
+    background: #0049AA; /* Nền xanh dương đậm */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 20vh;
+    font-weight: 700;
+}
+
+.dot {
+    color: #FEBD59; /* Màu vàng */
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 1rem auto 2rem;
+}
+
+/* Social Fixed Styles */
+.social-fixed {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.social-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    text-decoration: none;
+    color: #0049AA;
+    transition: background 0.3s, transform 0.2s;
+    width: 80px;
+    height: 80px;
+}
+
+.social-btn:hover {
+    background: #0049AA;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.social-btn img {
+    width: 40%;
+    height: 40%;
+}
+
+.social-btn span {
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-align: center;
+}
