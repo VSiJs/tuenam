@@ -116,7 +116,7 @@ header .poster-img {
 /* MENU GRID */
 .menu-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     justify-content: center;
 }
@@ -278,7 +278,14 @@ footer {
     .container {
         padding: 1rem;
     }
+    /*.menu-row {*/
+    /*    grid-template-columns: repeat(2, minmax(140px, 1fr));*/
+    /*    gap: 1rem;*/
+    /*}*/
+}
+@media (max-width: 600px) {
     .menu-row {
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 }
