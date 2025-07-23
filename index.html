@@ -1,178 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=vietnamese" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>TueNamLinkList</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333; /* Màu nền tổng thể */
-            background-image: url('images/4.png');
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: #4B70F5; /* Màu nền table lớn */
-            padding: 30px;
-            border-radius: 20px; /* Đường viền bo tròn */
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            width: 90%; /* Sử dụng phần trăm để thích hợp với các thiết bị khác nhau */
-            max-width: 400px; /* Đảm bảo không quá rộng trên màn hình lớn */
-            text-align: center;
-            position: relative;
-        }
-        .logo-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .logo {
-            max-width: 50%;
-            height: auto;
-        }
-        .logo-1 {
-            max-width: 80%;
-        }
-        .logo-2 {
-            max-width: 80%;
-        }
-        h1 {
-            color: #ffc107; /* Màu chữ TueNamLinkList */
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #add8e6; /* Màu nền cho ô nhập */
-            color: #000;
-        }
-        select {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: transparent; /* Đặt nền trong suốt */
-            color: #ffc107;
-            margin-bottom: 10px;
-            font-size: 1.2em; /* Tăng kích thước chữ trong Combobox*/
-        }
-        button {
-            width: 25%;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-        button:hover {
-            opacity: 0.9;
-        }
-        .option-3 {
-            background-color: #ffc107;
-            color: white;
-        }
-        .small-option-10 {
-            background-color: #A1DD70;
-            color: black;
-        }
-        .info, .error {
-            color: white;
-        }
-        .link-btn {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-    </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>Dayhocvaluyenthi.com</title>
+    <link rel="stylesheet" href="Dayhocvaluyenthi.com/CSS/home.css"/>
+    <script src="Dayhocvaluyenthi.com/JS/home.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-container">
-            <div>
-                <img class="logo logo-1" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9014c770c45dd83990edcdcc45efd26a36dcb6c4cbf39c8f8da47b1f287b4c07?apiKey=7ff81b0ad38544f78863440788161989&" alt="Logo 1">
-            </div>
-            <div>
-                <img class="logo logo-2" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a92137c144c2ae56b0a533695fe8645939618d8d08871dda04fc829c076d555?apiKey=7ff81b0ad38544f78863440788161989&" alt="Logo 2">
-            </div>
-        </div>
-        <h1>TueNamLinkList</h1>
-        <div class="link-btn" id="linkButtonContainer">
-            <button class="small-option-10" id="openLinkButton" style="display: none;" onclick="openLink()">Open Link</button>
-        </div>
-        <select id="linksContainer" class="links" onchange="showLink()">
-        </select>
+<!-- Nút social cố định -->
+<div class="social-fixed" >
+    <a href="https://zalo.me/0369984849" target="_blank" class="social-btn">
+        <img src="Dayhocvaluyenthi.com/img/zalo3.png" alt="Zalo"/>
+        <span>Zalo</span>
+    </a>
+    <a href="https://www.facebook.com/trungtamdayhocvaluyenthi" target="_blank" class="social-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+        <span>Facebook</span>
+    </a>
+    <a href="https://www.tiktok.com/@dayhocvaluyenthi" target="_blank" class="social-btn">
+        <img src="Dayhocvaluyenthi.com/img/tiktok.jpeg" alt="TikTok"/>
+        <span>Tiktok</span>
+    </a>
+</div>
+
+<!-- Header -->
+<header>
+    <img class="poster-img" src="Dayhocvaluyenthi.com/img/demoposter.jpeg" alt="Poster">
+    <a href="https://zalo.me/0369984849" target="_blank" class="cssbuttons-io">
+    <span>
+      Đăng Ký Ngay
+    </span>
+    </a>
+</header>
+
+
+<!-- Section MonHoc -->
+<section class="MonHoc" id="stMonHoc">
+    <!-- Nav dính trong MonHoc -->
+    <nav>
+        <ul>
+            <li><a href="#THCS">THCS</a></li>
+            <li><a href="#THPT">THPT</a></li>
+            <li><a href="#Toeic/Ielts">Toeic/Ielts</a></li>
+            <li><a href="#TuyenDung">Tuyển Dụng</a></li>
+        </ul>
+    </nav>
+
+    <div class="type">
+        <h1>Khóa học</h1>
     </div>
-    <script>
-        const linksContainer = document.getElementById('linksContainer');
-        const linkInput = document.getElementById('linkInput');
-        const infoInput = document.getElementById('infoInput');
-        const linkButtonContainer = document.getElementById('linkButtonContainer');
-        const openLinkButton = document.getElementById('openLinkButton');
-        // Các link mặc định
-        const defaultLinks = [
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/NHANVIEN/LISTNHANVIENCV/', info: 'BẢNG CẬP NHẬT CHECK LIST' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/NHANVIEN/LISTNHANVIEN/', info: 'Check List Theo ten' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/SoDoNhanSu/', info: 'Sơ Đồ Nhân Sự' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận tiếp thị/TruongBoPhanTiepThi/', info: 'Trưởng Bộ Phận Tiếp Thị' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận tài chính/TruongTaiChinh/', info: 'Trưởng Bộ Phận Tài Chính' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/TruongBoPhanNhanSu/', info: 'Trưởng Bộ Phận Nhân Sự' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận giảng dạy/TruongBoPhanGiangDay/', info: 'Trưởng Bộ Phận Giảng Dạy' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận giảng dạy/TaiLieuHocTap/',info:'Bộ Phận Tài Liệu' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận giảng dạy/BoPhanGiaoVien/GiaoVienLam/', info: 'Lịch dạy Giáo Viên Lâm' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận tiếp thị/DichVu/', info: 'Bộ Phận Dịch Vụ' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận tiếp thị/KinhDoanh/', info: 'Bộ Phận Kinh Doanh' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận tài chính/KeToan/', info: 'Bộ Phận Kế Toán' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận giảng dạy/BoPhanSanXuat/', info: 'Bộ Phận Sản Xuất' }, 
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/NhanSu/', info: 'Bộ Phận Nhân Sự' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/TuyenDung/', info: 'Bộ Phận Tuyển Dụng' },
-            { link: 'https://vsijs.github.io/tuenam/Bộ phận nhân sự/DaoTao/', info: 'Bộ Phận Đào Tạo' }
-        ];
-        // Load saved links and info from local storage
-        function loadLinks() {
-            const links = JSON.parse(localStorage.getItem('links')) || [];
-            if (links.length === 0) {
-                defaultLinks.forEach(linkObj => addLinkToDOM(linkObj.link, linkObj.info)); // Thêm link mặc định vào DOM
-            } else {
-                links.forEach(linkObj => addLinkToDOM(linkObj.link, linkObj.info));
-            }
-            if (linksContainer.options.length > 0) {
-                showLink();
-            }
-        }
-        // Add link and info to the DOM
-        function addLinkToDOM(link, info) {
-            const option = document.createElement('option');
-            option.textContent = info;
-            option.value = link;
-            linksContainer.appendChild(option);
-        }
-        // Show link associated with selected info
-        function showLink() {
-            const selectedOption = linksContainer.options[linksContainer.selectedIndex];
-            if (selectedOption) {
-                openLinkButton.style.display = 'block';
-            }
-        }
-        // Open link in new tab
-        function openLink() {
-            const selectedOption = linksContainer.options[linksContainer.selectedIndex];
-            if (selectedOption) {
-                const link = selectedOption.value;
-                window.open(link, '_blank');
-            }
-        }
-        // Initialize
-        loadLinks();
-    </script>
+
+    <div class="container">
+        <!-- THCS -->
+        <section id="THCS" class="menu-section">
+            <h2>THCS</h2>
+            <div class="menu-row">
+                <a href="#" class="menu-item" data-popup-img="../FolderClassSchedules/Popup/lich.png">
+                    <img src="Dayhocvaluyenthi.com/img/Artboard%201-100.jpg" alt="ComboTHCS"/>
+                    <div class="item-info">
+                        <h3>COMBO TRẠNG NGUYÊN</h3>
+                        <div class="price-rating">
+                            <span class="price">1.400.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/Math.jpg" alt="Math"/>
+                    <div class="item-info">
+                        <h3>Toán</h3>
+                        <div class="price-rating">
+                            <span class="price">700.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/Ly.jpg" alt="Lý"/>
+                    <div class="item-info">
+                        <h3>Lý</h3>
+                        <div class="price-rating">
+                            <span class="price">700.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/Mesa%20de%20trabajo%201-100.jpg" alt="Hóa"/>
+                    <div class="item-info">
+                        <h3>Hóa</h3>
+                        <div class="price-rating">
+                            <span class="price">700.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/Artboard%201-100.jpg" alt="Văn"/>
+                    <div class="item-info">
+                        <h3>Văn</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+        <!-- THPT -->
+        <section id="THPT" class="menu-section">
+            <h2>THPT</h2>
+            <div class="menu-row">
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Combo1">
+                    <div class="item-info">
+                        <h3>Combo 1</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Combo2">
+                    <div class="item-info">
+                        <h3>Combo 2</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Combo3">
+                    <div class="item-info">
+                        <h3>Combo 3</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Combo4">
+                    <div class="item-info">
+                        <h3>Combo 4</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!-- Toeic/Ielts -->
+        <section id="Toeic/Ielts" class="menu-section">
+            <h2>Toeic/Ielts</h2>
+            <div class="menu-row">
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Toeic">
+                    <div class="item-info">
+                        <h3>Toeic</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Ielts">
+                    <div class="item-info">
+                        <h3>Ielts</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!--TuyenDung-->
+        <section id="TuyenDung" class="menu-section">
+            <h2>Tuyển Dụng</h2>
+            <div class="menu-row">
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Toeic">
+                    <div class="item-info">
+                        <h3>Quản lý nhân sự</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Ielts">
+                    <div class="item-info">
+                        <h3>Giáo viên</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Ielts">
+                    <div class="item-info">
+                        <h3>Trợ giảng</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <img src="Dayhocvaluyenthi.com/img/chemistry.jpeg" alt="Ielts">
+                    <div class="item-info">
+                        <h3>Lễ tân</h3>
+                        <div class="price-rating">
+                            <span class="price">750.000/Tháng</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Dayhocvaluyenthi.com Designed & Developed by VSi</p>
+</footer>
+
+<div class="fixed-footer-nav">
+    <a href="index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" width="24" height="24">
+    </a>
+    <a href="Dayhocvaluyenthi.com/HTML/Address.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+        </svg>
+    </a>
+    <a href="Dayhocvaluyenthi.com/HTML/ComingSoonPage.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+            <path d="M6 2C4.89 2 4 2.89 4 4v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8l-6-6H6zm6 1.5L17.5 9H12V3.5zM8 14h8v2H8v-2zm0-4h8v2H8v-2z"/>
+        </svg>
+    </a>
+    <a href="Dayhocvaluyenthi.com/HTML/ClassSchedules.html">
+        <img src="Dayhocvaluyenthi.com/img/calendar.png" width="24" height="24" fill="#000000" viewBox="0 0 24 24"/>
+    </a>
+    <a id="footer-zalo-btn" style="cursor:pointer;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1V20a1 1 0 01-1 1c-9.39 0-17-7.61-17-17a1 1 0 011-1h3.5a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.24 1.05l-2.2 2.2z"/>
+        </svg>
+    </a>
+
+
+</div>
+<div id="popup-overlay" class="popup-overlay">
+    <div class="popup-content">
+        <button class="close-btn">&times;</button>
+        <img id="popup-image" src="" alt="Chi tiết khóa học">
+    </div>
+</div>
+
 </body>
 </html>

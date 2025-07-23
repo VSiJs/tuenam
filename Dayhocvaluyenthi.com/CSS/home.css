@@ -227,6 +227,16 @@ footer {
 }
 
 /* SOCIAL FIXED BUTTONS */
+/*.social-fixed {*/
+/*    position: fixed;*/
+/*    bottom: 7%;*/
+/*    right: 1rem;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 0.8rem;*/
+/*    z-index: 9999;*/
+/*}*/
+
 .social-fixed {
     position: fixed;
     bottom: 7%;
@@ -235,7 +245,17 @@ footer {
     flex-direction: column;
     gap: 0.8rem;
     z-index: 9999;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s;
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
 }
+.social-fixed.active {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: all;
+}
+
 .social-btn {
     display: flex;
     flex-direction: column;
@@ -354,7 +374,7 @@ footer {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 10010;
 }
 
 .popup-content {
@@ -369,6 +389,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 10020;
 }
 
 .popup-content img {
