@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4faff;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header-container {
+    background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+    padding: 2rem;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.header-container h1 {
+    color: #ffd700;
+    font-size: 2.2rem;
+}
+
+.header-container p {
+    color: white;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+/* Dropdown */
+.dropdown {
+    background-color: #ffd700;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dropdown label {
+    color: #1e90ff;
+    font-weight: 600;
+}
+
+.dropdown select {
+    border: 2px solid #1e90ff;
+    border-radius: 4px;
+    padding: 0.5rem;
+    min-width: 200px;
+}
+
+/* Schedule Card */
+.schedule-card {
+    border: 2px solid #1e90ff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.schedule-header {
+    background-color: #ffd700;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.schedule-header h3 {
+    color: #1e90ff;
+    margin: 0;
+}
+
+.schedule-card img {
+    width: 100%;
+    height: auto;
+    display: none;
+    border-top: 2px solid #1e90ff;
+    border-bottom: 2px solid #1e90ff;
+}
+
+.schedule-footer {
+    background-color: #ffd700;
+    padding: 2rem;
+    text-align: center;
+}
+
+.schedule-footer p {
+    color: #1e90ff;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .header-container h1 {
+        font-size: 1.6rem;
+    }
+
+    .dropdown {
+        flex-direction: column;
+    }
+}

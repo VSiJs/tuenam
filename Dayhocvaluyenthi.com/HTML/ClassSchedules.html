@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Schedules</title>
+  <link rel="stylesheet" href="../CSS/home.css">
+  <link rel="stylesheet" href="../CSS/ClassSchedules.css">
+</head>
+<body>
+<div class="social-fixed">
+  <a href="https://zalo.me/0369984849" target="_blank" class="social-btn">
+    <img src="../img/zalo3.png" alt="Zalo"/>
+    <span>Zalo</span>
+  </a>
+  <a href="https://www.facebook.com/trungtamdayhocvaluyenthi" target="_blank" class="social-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook">
+    <span>Facebook</span>
+  </a>
+  <a href="https://www.tiktok.com/@dayhocvaluyenthi" target="_blank" class="social-btn">
+    <img src="../img/tiktok.jpeg" alt="TikTok"/>
+    <span>Tiktok</span>
+  </a>
+</div>
+<div class="container">
+  <div class="header-container">
+    <h1>Class Schedules</h1>
+    <p>Select a grade to view weekly timetable</p>
+  </div>
+  <div class="dropdown">
+    <label for="gradeSelect">Grade:</label>
+    <select id="gradeSelect" onchange="showSchedule()">
+      <option value="">--Select a Grade--</option>
+      <option value="6">Grade 6</option>
+      <option value="7">Grade 7</option>
+      <option value="8">Grade 8</option>
+      <option value="9">Grade 9</option>
+      <option value="10">Grade 10</option>
+      <option value="11">Grade 11</option>
+      <option value="12">Grade 12</option>
+    </select>
+  </div>
+  <div class="schedule-card">
+    <div class="schedule-header">
+      <h3>Weekly Schedule</h3>
+    </div>
+    <img id="scheduleImage" src="" alt="Class Schedule">
+    <div class="schedule-footer">
+      <p>Select a grade to view schedule</p>
+    </div>
+  </div>
+</div>
+<div class="fixed-footer-nav">
+  <a href="Home.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" width="24" height="24">
+  </a>
+  <a href="Address.html">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+    </svg>
+  </a>
+  <a href="ComingSoonPage.html">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+      <path d="M6 2C4.89 2 4 2.89 4 4v16c0 1.11.89 2 2 2h12c1.11 0 2-.89 2-2V8l-6-6H6zm6 1.5L17.5 9H12V3.5zM8 14h8v2H8v-2zm0-4h8v2H8v-2z"/>
+    </svg>
+  </a>
+  <a href="ClassSchedules.html" target="_blank">
+    <img src="../img/calendar.png" width="24" height="24" fill="#000000" viewBox="0 0 24 24"/></a>
+  <a href="https://zalo.me/0369984849" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
+      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.05-.24c1.12.37 2.33.57 3.54.57a1 1 0 011 1V20a1 1 0 01-1 1c-9.39 0-17-7.61-17-17a1 1 0 011-1h3.5a1 1 0 011 1c0 1.21.2 2.42.57 3.54a1 1 0 01-.24 1.05l-2.2 2.2z"/>
+    </svg>
+  </a>
+
+</div>
+<script src="../JS/ClassSchedules.js"></script>
+</body>
+</html>
