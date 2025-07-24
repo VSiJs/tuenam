@@ -60,7 +60,6 @@ header .cssbuttons-io {
 .cssbuttons-io svg {
     width: 1.2em;
     height: 1.2em;
-    /*margin-right: 0.5em;*/
     flex-shrink: 0;
 }
 .cssbuttons-io span {
@@ -83,7 +82,6 @@ header .cssbuttons-io {
     transform: skew(30deg);
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
     z-index: 0;
-
 }
 .cssbuttons-io:hover::before {
     transform: translate3d(100%, 0, 0);
@@ -181,6 +179,7 @@ header .cssbuttons-io {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 .menu-item img {
+    margin: 0 auto;
     width: 96%;
     height: auto;
     aspect-ratio: 4/3;
@@ -227,16 +226,6 @@ footer {
 }
 
 /* SOCIAL FIXED BUTTONS */
-/*.social-fixed {*/
-/*    position: fixed;*/
-/*    bottom: 7%;*/
-/*    right: 1rem;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 0.8rem;*/
-/*    z-index: 9999;*/
-/*}*/
-
 .social-fixed {
     position: fixed;
     bottom: 7%;
@@ -325,45 +314,7 @@ footer {
     height: 24px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .MonHoc nav ul {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .MonHoc nav ul li {
-        margin: 0.5rem 1rem;
-    }
-    .container {
-        padding: 1rem;
-    }
-}
-@media (max-width: 600px) {
-    .menu-row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-}
-@media (max-width: 480px) {
-    .menu-row {
-        grid-template-columns: 1fr;
-    }
-}
-/* Tablet */
-@media (max-width: 1024px) {
-    .menu-row {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .menu-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* POPUP */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -376,7 +327,6 @@ footer {
     align-items: center;
     z-index: 10010;
 }
-
 .popup-content {
     position: relative;
     max-width: 90%;
@@ -391,13 +341,11 @@ footer {
     flex-direction: column;
     z-index: 10020;
 }
-
 .popup-content img {
     max-width: 100%;
     max-height: 80vh;
     border-radius: 6px;
 }
-
 .close-btn {
     position: absolute;
     top: 0.5rem;
@@ -407,4 +355,59 @@ footer {
     color: #333;
     border: none;
     cursor: pointer;
+}
+
+/*!* ========== MEDIA QUERIES TỐI ƯU ========== *!*/
+
+
+/* MOBILE SIÊU NHỎ (<375px) */
+@media (max-width: 375px) {
+    body {
+        font-size: 14px;
+        padding-bottom: 24%;
+    }
+    .container { padding: 0.3rem; }
+    .menu-section h2 { font-size: 1rem; }
+    .item-info h3 { font-size: 1rem; }
+    header .poster-img { height: 80px; object-fit: cover; }
+    .fixed-footer-nav { padding: 0.08rem 0; }
+    .social-fixed { right: 0.15rem; bottom: 16%; }
+}
+
+/* ĐIỆN THOẠI (<600px) */
+@media (max-width: 600px) {
+    .container { padding: 0.5rem; }
+    .type { font-size: 1rem; margin-left: 2%; margin-top: 2%; }
+    .menu-section { margin: 0.7rem 0; }
+    /* .menu-row { grid-template-columns: repeat(4, 1fr); } không thay đổi số cột */
+    .menu-item { margin-bottom: 0.8rem; }
+    header .poster-img { height: 100px; object-fit: cover; }
+    .fixed-footer-nav { padding: 0.15rem 0; }
+    .social-fixed { right: 0.15rem; bottom: 14%; }
+    footer { padding: 0.6rem; font-size: 0.95rem; }
+    .item-info h3 { font-size: 1.1rem; }
+    .popup-content { padding: 0.2rem; }
+    .popup-content img { max-height: 30vh; }
+    .menu-item img { width: 90%; }
+}
+
+/* TABLET (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container { padding: 0.9rem 0.4rem; }
+    .item-info h3 { font-size: 1.3rem; }
+    .menu-item img { width: 93%; }
+}
+
+/* LAPTOP NHỎ (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container { max-width: 980px; }
+    .item-info h3 { font-size: 1.5rem; }
+    .menu-item img { width: 94%; }
+}
+
+/* DESKTOP TO (>1281px) */
+@media (min-width: 1281px) {
+    .container { max-width: 1200px; padding: 2.5rem; }
+    .item-info h3 { font-size: 2rem; }
+    .menu-item img { width: 96%; }
 }
