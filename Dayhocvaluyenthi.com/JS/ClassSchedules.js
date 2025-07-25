@@ -12,3 +12,7 @@ function showSchedule() {
         image.src = '';
     }
 }
+// Khi show ảnh:
+document.getElementById('scheduleImage').classList.add('active');
+// Khi hide ảnh:
+document.getElementById('scheduleImage').classList.remove('active');
