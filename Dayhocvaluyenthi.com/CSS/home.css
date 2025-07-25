@@ -689,11 +689,11 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0.27rem 0 0.17rem 0;
+    padding: 0.45rem 0 0.28rem 0;
     z-index: 9999;
     box-shadow: 0 -6px 24px -6px #8e2de218, 0 -2px 10px #0049aa18;
     backdrop-filter: blur(8px);
-    border-radius: 22px 22px 0 0;
+    border-radius: 32px 32px 0 0;
     transition: box-shadow 0.17s, background 0.2s;
     overflow-x: auto;
 }
@@ -705,7 +705,7 @@ footer {
     text-decoration: none;
     flex: 1;
     min-width: 0;
-    padding: 0.23rem 0 0.09rem 0;
+    padding: 0.36rem 0 0.18rem 0;
     border-left: none;
     border-radius: 14px;
     position: relative;
@@ -729,9 +729,9 @@ footer {
 
 .fixed-footer-nav img,
 .fixed-footer-nav svg {
-    width: 25px;
-    height: 25px;
-    margin-bottom: 2px;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 5px;
     filter: grayscale(0.04) brightness(1);
     transition: filter 0.13s, transform 0.12s;
     border-radius: 7px;
@@ -762,29 +762,29 @@ footer {
     }
 
     .fixed-footer-nav {
-        padding: 0.13rem 0 0.07rem 0;
-        border-radius: 13px 13px 0 0;
+        padding: 0.23rem 0 0.14rem 0;
+        border-radius: 18px 18px 0 0;
     }
 
     .fixed-footer-nav img, .fixed-footer-nav svg {
-        width: 19px;
-        height: 19px;
+        width: 28px;
+        height: 28px;
     }
 
     .fixed-footer-nav a {
-        padding: 0.11rem 0 0.07rem 0;
-        border-radius: 8px;
+        padding: 0.18rem 0 0.11rem 0;
+        border-radius: 12px;
     }
 }
 
 @media (max-width: 400px) {
     .fixed-footer-nav {
-        border-radius: 8px 8px 0 0;
+        border-radius: 11px 11px 0 0;
     }
 
     .fixed-footer-nav img, .fixed-footer-nav svg {
-        width: 15px;
-        height: 15px;
+        width: 22px;
+        height: 22px;
     }
 }
 
