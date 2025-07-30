@@ -6,6 +6,7 @@ function showSchedule() {
         // Đường dẫn tương đối: từ HTML → ../FolderClassSchedules
         // Đặt tên tương đối của ảnh schedule-grade-(số từ 6-12)
         image.src = `../FolderClassSchedules/schedule-grade-${grade}.png`;
+        image.src = `../FolderClassSchedules/schedule-grade-${grade}.jpg`;
         image.style.display = 'block';
     } else {
         image.style.display = 'none';
